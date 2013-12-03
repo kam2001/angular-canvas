@@ -1,41 +1,31 @@
-<!DOCTYPE html>
-<html ng-app="myApp">
+<!doctype html>
+<html lang="en" ng-app="newApp">
 <head>
-    <title>Home</title>
-    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="libs/angular.min.js"></script>
+     <script src="libs/testing.js"></script>
 </head>
 <body>
-<!--<div ng-controller="myCtrl">
-<input ng-model="display">{{display}}
-</div>-->
+This is a test - it is working.
+<div ng-controller="newCtrl">
+    <input ng-model="display">
 
-<div id="angular-test" style="margin: 10px" ng-app>
-    <div ng-controller="CanvasCtrl">
-        <h1>Angular test webstorm - new update</h1>
-        <form ng-submit="addData()">
-            <input ng-model="x"  size="2" placeholder="X" required type="number" min="0" max="600">
-            <input ng-model="y"  size="2" placeholder="Y" required type="number" min="0" max="400">
-            <input ng-model="amount"  size="3" placeholder="Amount" required type="number" min="5" max="100">
-            <input class="btn-primary" type="submit" value="Add point">
-        </form>
-        <canvas id="canvas" style="border: 1px gray solid; float: left"></canvas>
-        <div id="list" style="margin-left: 620px; float; left">
-            Points:
-            <ul>
-                <li ng-repeat="point in data">
-                    [{{point.x}}, {{point.y}}] <a ng-click="removePoint(point)">[x]</a>
-                </li>
-            </ul>
-        </div>
-        <div style="clear: both"/>
-    </div>
+        <ul>
+            <li ng-repeat="phone in phones">
+                {{phone.name}}<br>
+                {{phone.snippet}}<br>
+                {{phone.age}}
+            </li>
+        </ul>
+
+<!--    <ul>
+        <li ng-repeat="phone in phones">
+            {{phone.name}}
+            <p>{{phone.snippet}}</p>
+        </li>
+    </ul>-->
 </div>
-<!--<canvas id="myCanvas" width="578" height="200"></canvas>-->
-<!--
-<canvas id="myCanvas2" width="578" height="200"></canvas>-->
-
-<script src ="libs/main.js"></script>
 
 </body>
 </html>
