@@ -3,11 +3,11 @@ angular
         .controller('CanvasCtrl',function($scope){
         var canvas = document.getElementById('canvas');
         var context = canvas.getContext('2d');
-
         $scope.data = [
 
+            name:5,
+            lastname:4
         ];
-
         $scope.addData = function() {
             var id = 0;
             if($scope.data.length > 0) {
@@ -20,7 +20,6 @@ angular
             $scope.amount = '';
             draw($scope.data);
         };
-
         $scope.removePoint = function(point) {
             console.log(point);
             for(var i=0; i<$scope.data.length; i++) {
@@ -29,12 +28,10 @@ angular
                     $scope.data.splice(i, 1);
                 }
             }
-
             context.clearRect(0,0,600,400);
             draw($scope.data);
             console.log($scope.data);
         }
-
         function draw(data) {
             for(var i=0; i<data.length; i++) {
                 drawDot(data[i]);
@@ -43,7 +40,6 @@ angular
                 }
             }
         }
-
         function drawDot(data) {
             context.beginPath();
             context.arc(data.x, data.y, data.amount, 0, 2*Math.PI, false);
@@ -53,7 +49,6 @@ angular
             context.strokeStyle = "#666666";
             context.stroke();
         }
-
         function drawLine(data1, data2) {
             context.beginPath();
             context.moveTo(data1.x, data1.y);
@@ -61,7 +56,6 @@ angular
             context.strokeStyle = "black";
             context.stroke();
         }
-
         // setup
         canvas.width = 600;
         canvas.height = 400;
@@ -69,8 +63,8 @@ angular
         context.beginPath();
         draw($scope.data);
 
-    })
 
+    })
 /*
 
 (function () {

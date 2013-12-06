@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <script src="libs/angular.min.js"></script>
-     <script src="libs/testing.js"></script>
+
+
+     <link href="css/main.css" type="text/css" rel="stylesheet" />
+     <style>
+         #canvas{
+             background-color: #fff;
+         }
+     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
 </head>
 <body>
-This is a test - it is working.
+<h3>This is a test - it is working.</h3>
 <div ng-controller="newCtrl">
     <input ng-model="display">
 
@@ -19,13 +26,17 @@ This is a test - it is working.
             </li>
         </ul>
 
-<!--    <ul>
-        <li ng-repeat="phone in phones">
-            {{phone.name}}
-            <p>{{phone.snippet}}</p>
-        </li>
-    </ul>-->
-</div>
+<!--<img id="dot" src="images/dot.png" style="display: none">-->
+<form ng-submit="drawLine()">
+<input id ="x1" type="number"> <input id="y1" type="number">
+<input id ="x2" type="number"> <input id="y2" type="number">
+    <input type="submit">
 
+</form>
+<canvas id="canvas" width="500px" height="400px"></canvas>
+
+    <script src="libs/testing.js"></script>
+
+</div>
 </body>
 </html>
